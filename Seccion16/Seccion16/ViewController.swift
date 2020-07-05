@@ -31,6 +31,33 @@ class ViewController: UIViewController {
 
 //MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
+    
+    //Cabeceras - headers
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Celdas Simples"
+        }
+        return "Celdas Custom"
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    //Pie - Footer
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 0 {
+            return "Pie para celda simple"
+        }
+        return "Pie para celda custom"
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         myCountries.count
     }
